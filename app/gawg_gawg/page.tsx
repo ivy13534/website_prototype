@@ -8,7 +8,7 @@ export default function LuciusPage() {
       </h1>
       
       <p className="mt-4 text-xl text-gray-400">
-        Jangan menoleh ke belakang...
+        Hati-hati nanti dianu!
       </p>
 
     </main>

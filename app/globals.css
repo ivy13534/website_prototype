@@ -5,8 +5,8 @@ html {
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a1a;
+  --foreground: #e0e7ff;
 }
 
 @theme inline {
@@ -18,13 +18,32 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a1a;
+    --foreground: #e0e7ff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Wuthering Waves glow effects */
+@keyframes neon-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(34, 197, 234, 0.5), 0 0 20px rgba(168, 85, 247, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(34, 197, 234, 0.8), 0 0 30px rgba(168, 85, 247, 0.5); }
+}
+
+@keyframes edge-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(34, 197, 234, 0.3), inset 0 0 10px rgba(34, 197, 234, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(34, 197, 234, 0.6), inset 0 0 15px rgba(34, 197, 234, 0.2); }
+}
+
+.neon-title {
+  animation: neon-glow 3s ease-in-out infinite;
+}
+
+.edge-frame {
+  animation: edge-glow 3s ease-in-out infinite;
 }

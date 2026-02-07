@@ -22,9 +22,9 @@ const BackgroundEffects = () => {
   }, [isMobile]);
   
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden bg-gradient-to-br from-[#0a0515] via-[#120828] to-[#0f0620]">
+    <div className="fixed inset-0 z-[-1] overflow-hidden bg-linear-to-br from-[#0a0515] via-[#120828] to-[#0f0620]">
       {/* Animated grid background with teal tint */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a62e_1px,transparent_1px),linear-gradient(to_bottom,#14b8a62e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a62e_1px,transparent_1px),linear-gradient(to_bottom,#14b8a62e_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       
       {/* Wuthering Waves glow effects */}
       {!isMobile && (
@@ -36,7 +36,7 @@ const BackgroundEffects = () => {
               opacity: [0.15, 0.5, 0.15],
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-40 -left-40 h-[700px] w-[700px] rounded-full bg-cyan-500/25 blur-[180px] pointer-events-none"
+            className="absolute -top-40 -left-40 h-175 w-175 rounded-full bg-cyan-500/25 blur-[180px] pointer-events-none"
           />
           {/* Purple accent glow */}
           <motion.div 
@@ -45,7 +45,7 @@ const BackgroundEffects = () => {
               opacity: [0.1, 0.4, 0.1],
             }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute -bottom-40 -right-40 h-[700px] w-[700px] rounded-full bg-purple-600/20 blur-[200px] pointer-events-none"
+            className="absolute -bottom-40 -right-40 h-175 w-175 rounded-full bg-purple-600/20 blur-[200px] pointer-events-none"
           />
           {/* Violet top-right glow */}
           <motion.div 
@@ -54,7 +54,7 @@ const BackgroundEffects = () => {
               opacity: [0.08, 0.25, 0.08],
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-            className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-violet-500/15 blur-[150px] pointer-events-none"
+            className="absolute top-0 right-0 h-150 w-150 rounded-full bg-violet-500/15 blur-[150px] pointer-events-none"
           />
         </>
       )}
@@ -74,7 +74,7 @@ const BackgroundEffects = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute w-1.5 h-1.5 bg-gradient-to-b from-cyan-400 to-cyan-500/0 rounded-full blur-sm"
+            className="absolute w-1.5 h-1.5 bg-linear-to-b from-cyan-400 to-cyan-500/0 rounded-full blur-sm"
             style={{
               left: `${particle.left}%`,
               top: `${particle.top}%`,
@@ -97,7 +97,7 @@ const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 origin-left z-[60] shadow-[0_0_20px_rgba(34,197,234,0.8)]"
+      className="fixed top-0 left-0 right-0 h-1 bg-linear-to-r from-cyan-400 via-purple-500 to-cyan-400 origin-left z-60 shadow-[0_0_20px_rgba(34,197,234,0.8)]"
       style={{ scaleX }}
     />
   );
@@ -117,19 +117,19 @@ export default function Portfolio() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 z-50 w-full border-b border-cyan-500/20 bg-gradient-to-b from-[#0a0515]/80 via-[#120828]/60 to-transparent backdrop-blur-2xl"
+        className="fixed top-0 z-50 w-full border-b border-cyan-500/20 bg-linear-to-b from-[#0a0515]/80 via-[#120828]/60 to-transparent backdrop-blur-2xl"
       >
         <div className="container mx-auto flex h-20 items-center justify-between px-6">
           {/* Logo */}
           <Link href="/" className="group relative flex items-center gap-2">
             <motion.div 
-              className="relative flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-cyan-400 via-teal-500 to-cyan-600 text-white font-bold text-lg shadow-[0_0_20px_rgba(34,197,234,0.6)]"
+              className="relative flex h-10 w-10 items-center justify-center rounded-sm bg-linear-to-br from-cyan-400 via-teal-500 to-cyan-600 text-white font-bold text-lg shadow-[0_0_20px_rgba(34,197,234,0.6)]"
               whileHover={{ rotate: 10, scale: 1.1, boxShadow: "0 0 30px rgba(34,197,234,0.8)" }}
             >
               I
             </motion.div>
             <span className="text-xl font-black tracking-tight text-white group-hover:text-cyan-400 transition hidden sm:inline">
-              IVY<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">.DEV</span>
+              IVY<span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-teal-400">.DEV</span>
             </span>
           </Link>
 
@@ -163,7 +163,7 @@ export default function Portfolio() {
           <motion.div 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
-            className="md:hidden bg-gradient-to-b from-[#120828] to-[#0a0515] border-b border-cyan-500/20 overflow-hidden"
+            className="md:hidden bg-linear-to-b from-[#120828] to-[#0a0515] border-b border-cyan-500/20 overflow-hidden"
           >
             <div className="flex flex-col space-y-4 px-6 py-6">
               {[
@@ -190,8 +190,8 @@ export default function Portfolio() {
       <section className="relative min-h-screen pt-20 flex items-center justify-center px-6 overflow-hidden">
         
         {/* Cinematic top/bottom vignette bars */}
-        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#0a0515] via-[#0a0515]/50 to-transparent z-[5]" />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0515] to-transparent z-[5]" />
+        <div className="absolute top-0 left-0 right-0 h-40 bg-linear-to-b from-[#0a0515] via-[#0a0515]/50 to-transparent z-5" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-[#0a0515] to-transparent z-5" />
         
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -212,19 +212,19 @@ export default function Portfolio() {
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 bg-clip-border shadow-[0_0_40px_rgba(34,197,234,0.4)]"
+                className="absolute inset-0 rounded-full border-2 border-transparent bg-linear-to-r from-cyan-500 via-purple-500 to-cyan-500 bg-clip-border shadow-[0_0_40px_rgba(34,197,234,0.4)]"
               />
               
               {/* Inner ring */}
               <motion.div 
                 animate={{ rotate: -360 }}
                 transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-4 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 bg-clip-border opacity-50"
+                className="absolute inset-4 rounded-full border-2 border-transparent bg-linear-to-r from-purple-500 via-cyan-500 to-purple-500 bg-clip-border opacity-50"
               />
               
               {/* Portrait card */}
-              <div className="absolute inset-6 rounded-2xl bg-gradient-to-br from-[#1a0f2e] via-[#1a0f2e] to-[#0f0620] border border-cyan-500/40 flex items-center justify-center overflow-hidden shadow-[inset_0_0_30px_rgba(34,197,234,0.2)]">
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent" />
+              <div className="absolute inset-6 rounded-2xl bg-linear-to-br from-[#1a0f2e] via-[#1a0f2e] to-[#0f0620] border border-cyan-500/40 flex items-center justify-center overflow-hidden shadow-[inset_0_0_30px_rgba(34,197,234,0.2)]">
+                <div className="absolute inset-0 bg-linear-to-t from-cyan-500/10 to-transparent" />
                 <span className="text-8xl md:text-9xl relative z-10">⚔️</span>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Portfolio() {
             className="mb-8 inline-block"
           >
             <div className="px-5 py-2 rounded-full border border-purple-500/60 bg-purple-500/10 backdrop-blur-sm shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-              <span className="text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">★ ★ ★ ★ ★ — LEGENDARY DEVELOPER</span>
+              <span className="text-sm font-black text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400">★ ★ ★ ★ ★ — LEGENDARY DEVELOPER</span>
             </div>
           </motion.div>
 
@@ -249,7 +249,7 @@ export default function Portfolio() {
             transition={{ delay: 0.2 }}
           >
             <h1 className="text-6xl md:text-8xl font-black mb-4 text-white tracking-tighter neon-title">
-              IVY<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-300">.DEV</span>
+              IVY<span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-teal-400 to-cyan-300">.DEV</span>
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold text-cyan-400 mb-6 tracking-wide">RESONATOR CLASS: BACKEND ARCHITECT</h2>
           </motion.div>
@@ -294,7 +294,7 @@ export default function Portfolio() {
               href="#resonators" 
               className="group relative px-8 py-4 rounded-lg font-black text-white overflow-hidden text-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-teal-600 transition-all group-hover:from-cyan-500 group-hover:to-teal-500 shadow-[0_0_20px_rgba(34,197,234,0.5)]" />
+              <div className="absolute inset-0 bg-linear-to-r from-cyan-600 to-teal-600 transition-all group-hover:from-cyan-500 group-hover:to-teal-500 shadow-[0_0_20px_rgba(34,197,234,0.5)]" />
               <div className="relative flex items-center justify-center gap-2">
                 <Sparkles size={20} />
                 View Profile
@@ -339,7 +339,7 @@ export default function Portfolio() {
             className="mb-20 text-center"
           >
             <h2 className="text-4xl md:text-6xl font-black text-white mb-4 neon-title">
-              TECH <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">RESONATORS</span>
+              TECH <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-teal-400">RESONATORS</span>
             </h2>
             <p className="text-cyan-300/70 text-lg">Core abilities and specialized skills</p>
           </motion.div>
@@ -364,13 +364,13 @@ export default function Portfolio() {
                 className="group relative rounded-xl overflow-hidden cursor-pointer edge-frame"
               >
                 {/* Gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a0f2e] via-[#0f0620] to-[#0a0515]" />
+                <div className="absolute inset-0 bg-linear-to-br from-[#1a0f2e] via-[#0f0620] to-[#0a0515]" />
                 
                 {/* Border effect */}
                 <div className="absolute inset-0 rounded-xl border border-cyan-500/30 group-hover:border-cyan-400/80 transition-colors" />
                 
                 {/* Hover glow */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 rounded-xl bg-linear-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 {/* Content */}
                 <div className="relative z-10 p-6 backdrop-blur-sm h-full flex flex-col items-center justify-center gap-3 text-center">
@@ -387,7 +387,7 @@ export default function Portfolio() {
       </section>
 
       {/* ===== CHRONICLE: Experience Timeline ===== */}
-      <section id="experience" className="py-32 px-6 relative bg-gradient-to-b from-purple-950/20 to-[#0a0515]">
+      <section id="experience" className="py-32 px-6 relative bg-linear-to-b from-purple-950/20 to-[#0a0515]">
         <div className="container mx-auto max-w-4xl">
           <motion.h2 
             initial={{ opacity: 0 }} 
@@ -395,13 +395,13 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="mb-4 text-center text-4xl md:text-6xl font-black text-white neon-title"
           >
-            MISSION <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">CHRONICLE</span>
+            MISSION <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-cyan-400">CHRONICLE</span>
           </motion.h2>
           <p className="text-center text-cyan-300/60 mb-20 text-lg">Career progression and achievements</p>
 
           <div className="relative">
             {/* Timeline connector */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-cyan-500/0 shadow-[0_0_30px_rgba(34,197,234,0.4)]" />
+            <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-cyan-500 via-purple-500 to-cyan-500/0 shadow-[0_0_30px_rgba(34,197,234,0.4)]" />
 
             <div className="space-y-16">
               {[
@@ -439,7 +439,7 @@ export default function Portfolio() {
                   <motion.div 
                     animate={{ scale: [1, 1.3, 1], boxShadow: ["0_0_0_0_rgba(34,197,234,0.4)", "0_0_20px_10px_rgba(34,197,234,0)"] }}
                     transition={{ duration: 2.5, repeat: Infinity, delay: idx * 0.3 }}
-                    className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 ring-4 ring-[#0a0515] flex items-center justify-center z-20"
+                    className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-2 w-8 h-8 rounded-full bg-linear-to-r from-cyan-500 to-purple-500 ring-4 ring-[#0a0515] flex items-center justify-center z-20"
                   >
                     <div className="w-3 h-3 bg-[#0a0515] rounded-full" />
                   </motion.div>
@@ -447,7 +447,7 @@ export default function Portfolio() {
                   {/* Content card */}
                   <motion.div 
                     whileHover={{ y: -8, boxShadow: "0_0_30px_rgba(34,197,234,0.3)" }}
-                    className="rounded-xl border border-cyan-500/30 hover:border-cyan-400/60 bg-gradient-to-br from-[#1a0f2e]/80 to-[#0f0620]/80 backdrop-blur-sm p-8 transition-all"
+                    className="rounded-xl border border-cyan-500/30 hover:border-cyan-400/60 bg-linear-to-br from-[#1a0f2e]/80 to-[#0f0620]/80 backdrop-blur-sm p-8 transition-all"
                   >
                     <div className="text-4xl mb-4">{item.icon}</div>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-3">
@@ -476,7 +476,7 @@ export default function Portfolio() {
             className="mb-20"
           >
             <h2 className="text-4xl md:text-6xl font-black text-white mb-3 neon-title">
-              PROJECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">ARSENAL</span>
+              PROJECT <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-400">ARSENAL</span>
             </h2>
             <p className="text-cyan-300/70 text-lg">Enterprise systems and featured applications</p>
           </motion.div>
@@ -508,10 +508,10 @@ export default function Portfolio() {
                 className="group relative rounded-2xl overflow-hidden border border-cyan-500/30 hover:border-cyan-400/60 transition-all cursor-pointer"
               >
                 {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a0f2e] via-[#0f0620] to-[#0a0515]" />
+                <div className="absolute inset-0 bg-linear-to-br from-[#1a0f2e] via-[#0f0620] to-[#0a0515]" />
                 
                 {/* Glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-tr from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 {/* Content */}
                 <div className="relative z-10 p-10 md:p-12">
@@ -533,7 +533,7 @@ export default function Portfolio() {
                     {project.tags.map(tag => (
                       <span 
                         key={tag}
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-900/30 to-purple-900/20 border border-cyan-500/30 text-cyan-300 text-sm font-bold"
+                        className="px-4 py-2 rounded-lg bg-linear-to-r from-cyan-900/30 to-purple-900/20 border border-cyan-500/30 text-cyan-300 text-sm font-bold"
                       >
                         {tag}
                       </span>
@@ -566,7 +566,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Border glow */}
-                <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-border opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl border border-transparent bg-linear-to-r from-cyan-500 to-purple-500 bg-clip-border opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none" />
               </motion.div>
             ))}
           </div>
@@ -576,13 +576,13 @@ export default function Portfolio() {
       {/* ===== CONTACT: Recruitment ===== */}
       <section id="contact" className="py-32 px-6 relative overflow-hidden">
         {/* Ambient background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-cyan-500/15 to-purple-600/15 blur-[200px] rounded-full pointer-events-none hidden md:block" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 bg-linear-to-r from-cyan-500/15 to-purple-600/15 blur-[200px] rounded-full pointer-events-none hidden md:block" />
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="container mx-auto max-w-5xl relative z-10 rounded-3xl border-2 border-cyan-500/40 bg-gradient-to-br from-[#1a0f2e]/90 to-[#0a0515]/90 p-12 md:p-20 text-center backdrop-blur-xl shadow-[0_0_60px_rgba(34,197,234,0.2)]"
+          className="container mx-auto max-w-5xl relative z-10 rounded-3xl border-2 border-cyan-500/40 bg-linear-to-br from-[#1a0f2e]/90 to-[#0a0515]/90 p-12 md:p-20 text-center backdrop-blur-xl shadow-[0_0_60px_rgba(34,197,234,0.2)]"
         >
           {/* Decorative element */}
           <motion.div 
@@ -592,7 +592,7 @@ export default function Portfolio() {
           />
           
           <h2 className="text-5xl md:text-7xl font-black text-white mb-6 neon-title">
-            LET'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">COLLABORATE</span>
+            LET'S <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-teal-300">COLLABORATE</span>
           </h2>
           
           <p className="mb-10 mx-auto max-w-3xl text-xl text-slate-300 leading-relaxed">
@@ -621,7 +621,7 @@ export default function Portfolio() {
               href="mailto:your.email@example.com" 
               className="group relative px-10 py-4 rounded-lg font-black text-white overflow-hidden text-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-teal-600 group-hover:from-cyan-500 group-hover:to-teal-500 transition-all shadow-[0_0_20px_rgba(34,197,234,0.5)]" />
+              <div className="absolute inset-0 bg-linear-to-r from-cyan-600 to-teal-600 group-hover:from-cyan-500 group-hover:to-teal-500 transition-all shadow-[0_0_20px_rgba(34,197,234,0.5)]" />
               <div className="relative flex items-center justify-center gap-2">
                 <Mail size={22} />
                 Send Email
@@ -658,9 +658,9 @@ export default function Portfolio() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="border-t border-cyan-500/20 bg-gradient-to-b from-[#0a0515] to-[#000000] py-16 relative overflow-hidden">
+      <footer className="border-t border-cyan-500/20 bg-linear-to-b from-[#0a0515] to-[#000000] py-16 relative overflow-hidden">
         {/* Gradient line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" />
         
         <div className="container mx-auto px-6">
           {/* Social links */}

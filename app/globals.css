@@ -5,11 +5,21 @@ html {
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a1a;
+  /* Warna Void khas HSR/Wuthering Waves */
+  --background: #090B14; 
   --foreground: #e0e7ff;
 }
 
 @theme inline {
+  /* Mendaftarkan warna agar bisa dipakai: class="bg-void" atau "text-gold" */
+  --color-void: #090B14;
+  --color-cyan-400: #00F0FF;
+  --color-cyan-500: #00D1FF;
+  --color-gold: #FFD700;
+
+  /* Mendaftarkan font Orbitron */
+  --font-orbitron: var(--font-orbitron);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -18,7 +28,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a1a;
+    --background: #090B14;
     --foreground: #e0e7ff;
   }
 }
@@ -26,10 +36,12 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Menggunakan font sans standar untuk teks panjang agar nyaman dibaca */
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
 }
 
-/* Wuthering Waves glow effects */
+/* --- Animasi Efek Visual (Sudah Benar, Tetap Pertahankan) --- */
+
 @keyframes neon-glow {
   0%, 100% { text-shadow: 0 0 10px rgba(34, 197, 234, 0.5), 0 0 20px rgba(168, 85, 247, 0.3); }
   50% { text-shadow: 0 0 20px rgba(34, 197, 234, 0.8), 0 0 30px rgba(168, 85, 247, 0.5); }
@@ -46,4 +58,13 @@ body {
 
 .edge-frame {
   animation: edge-glow 3s ease-in-out infinite;
+}
+
+/* Background Bintang Statis */
+.bg-stars {
+  background-image: 
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px);
+  background-size: 550px 550px, 350px 350px;
+  background-position: 0 0, 40px 60px;
 }
